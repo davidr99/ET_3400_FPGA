@@ -1,0 +1,37 @@
+module memoryDecoder(Clock, Reset, Address, CE_ROM, CE_RAM, CE_DISPLAY, CE_KEYBOARD);
+	input clock;
+	input reset;
+	input [15:0] address;
+	output CE_ROM, CE_RAM, CE_DISPLAY, CE_KEYBOARD;
+
+
+	always @ (posedge reset or posedge clock)
+		begin
+			CE_ROM = 0;
+			CE_RAM = 0;
+			CE_DISPLAY = 0;
+			CE_KEYBOARD = 0;
+			if (!reset)
+				begin
+					if (Address >= 16'hFC00)
+						begin 
+							CE_ROM = 1;
+						end
+					if (Address <= 16'h01FF)
+						begin
+							CE_RAM = 1;
+						end
+					if (Address >= 16'hC110 && Address <= 16'hC16F)
+						begin
+							CE_DISPLAY = 1;
+						end
+					if (Address >= 16'hC003 && Address <= 16'hC00E)
+						begin
+							CE_KEYBOARD = 1;
+						end
+					
+				end
+		end
+			
+			
+endmodule

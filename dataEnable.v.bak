@@ -1,0 +1,15 @@
+module dataEnable(EN, DATA_I, DATA_O);
+	input EN;
+	input [6:0] DATA_I;
+	output reg [6:0] DATA_O;
+	
+	
+	always @(*)
+		begin
+		
+			DATA_O = EN ? DATA_I : 8'bZZZZZZZZ;
+		
+		end
+			
+			
+endmodule

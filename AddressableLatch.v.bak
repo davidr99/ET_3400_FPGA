@@ -1,0 +1,13 @@
+module AddressableLatch(Address, D, G_NEG, Q);
+	input [2:0] Address;
+	input D, G_NEG;
+	output reg [7:0] Q;
+	
+	
+	always @(negedge G_NEG)
+		begin
+			Q[Address] <= D;
+		end
+			
+			
+endmodule
