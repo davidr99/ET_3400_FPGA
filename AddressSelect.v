@@ -18,12 +18,12 @@ module memoryDecoder(Address, Address_Valid, Clock, CE_ROM, ROM_ADDRESS, CE_RAM,
 	assign CE_ROM = (Address >= 16'hFC00) && valid_address;
 	assign CE_RAM = (Address <= 16'h01FF) && valid_address;
 	assign CE_DISPLAY = (Address >= 16'hC100 && Address <= 16'hC1FF) && valid_address;
-	assign CE_KEYBOARD = (Address >= 16'hC000 && Address <= 16'hC0FF) && valid_address;
+	assign CE_KEYBOARD = (Address >= 16'hC000 && Address <= 16'hC00F) && valid_address;
 	
-	assign ROM_ADDRESS = !CE_ROM ? 9'b0 : (Address - 16'hFC00);
+	assign ROM_ADDRESS = !CE_ROM ? 9'b0 : (Address & ~(16'hFC00));
 	assign RAM_ADDRESS = !CE_RAM ? 8'b0 : Address;
-	assign KEYB_ADDRESS = !CE_DISPLAY ? 3'b0 : (Address - 16'hC100);
-	assign DISP_ADDRESS = !CE_KEYBOARD ? 6'b0 : (Address - 16'hC000);
+	assign DISP_ADDRESS = !CE_DISPLAY ? 6'b0 : (Address - (16'hC100));
+	assign KEYB_ADDRESS = !CE_KEYBOARD ? 3'b0 : (Address & ~(16'hC000));
 
 
 	/*

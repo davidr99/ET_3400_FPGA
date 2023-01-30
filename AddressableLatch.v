@@ -5,9 +5,9 @@ module AddressableLatch(Address, CE, D, G, Q);
 	output reg [7:0] Q;
 	
 	
-	always @(posedge CE)
+	always @(*)
 		begin
-			if (!G)
+			if (!G && CE)
 				begin
 					Q[Address] <= !D;
 				end

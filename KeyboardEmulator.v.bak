@@ -1,0 +1,35 @@
+// This maps a 4x4 keyboard to a 3x6
+
+module KeyboardEmulator(Clock, Keyb_Value, Keyb_Col_I, Keyb_Row_O);
+	input Clock;	
+	input [5:0] Keyb_Value;
+	
+	//	Keyboard
+	input [6:0] Keyb_Row_O;
+	output [2:0] Keyb_Col_I;
+	
+	// E = #
+	// F = *
+	
+	// Col
+	// A0 A1 A2  Row
+	// D  E  F    1
+	// A  B  C    2
+	// 7  8  9    3
+	// 4  5  6    4
+	// 1  2  3    5
+	// 0	        6
+	
+	// 1 = 1  2 = 5  3 = 9   A = 13
+	// 4 = 2  5 = 6  6 = 10  B = 14
+	// 7 = 3  8 = 7  9 = 11  C = 15
+	// * = 4  0 = 8  # = 12  D = 16
+	
+		
+	always @ (posedge Clock)
+		begin
+			
+		end
+			
+			
+endmodule

@@ -204,10 +204,6 @@ set_location_assignment PIN_V10 -to GPIOGPIO[0]
 set_location_assignment PIN_W10 -to GPIOGPIO[1]
 set_location_assignment PIN_V9 -to GPIOGPIO[2]
 set_location_assignment PIN_W9 -to GPIOGPIO[3]
-set_location_assignment PIN_V8 -to GPIOGPIO[4]
-set_location_assignment PIN_W8 -to GPIOGPIO[5]
-set_location_assignment PIN_V7 -to GPIOGPIO[6]
-set_location_assignment PIN_W7 -to GPIOGPIO[7]
 set_location_assignment PIN_W6 -to GPIOGPIO[8]
 set_location_assignment PIN_V5 -to GPIOGPIO[9]
 set_location_assignment PIN_W5 -to GPIOGPIO[10]
@@ -461,4 +457,15 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name VERILOG_FILE AddressableLatch.v
 set_global_assignment -name BLOCK_DESIGN_NAMING QUARTUSII
+set_global_assignment -name VERILOG_FILE KeyboardDecoder.v
+set_location_assignment PIN_V8 -to GPIOGPIO_I[0]
+set_location_assignment PIN_W8 -to GPIOGPIO_I[1]
+set_location_assignment PIN_V7 -to GPIOGPIO_I[2]
+set_location_assignment PIN_W7 -to GPIOGPIO_I[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I
+set_global_assignment -name VERILOG_FILE KeyboardEmulator.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

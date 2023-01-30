@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU_6801
-Thu Mar 12 07:28:02 2020
+Sun Dec 06 15:22:12 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -16,21 +16,22 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |Main|wb_cpu01:inst|cpu01:cpu0|state
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_vk81:auto_generated
- 16. Source assignments for ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_4pe1:auto_generated
- 17. Parameter Settings for User Entity Instance: CPUClock:inst3|altpll:altpll_component
- 18. Parameter Settings for User Entity Instance: ET3400_ROM:inst11|altsyncram:altsyncram_component
- 19. Parameter Settings for User Entity Instance: ET3400_RAM:inst16|altsyncram:altsyncram_component
- 20. altpll Parameter Settings by Entity Instance
- 21. altsyncram Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "wb_cpu01:inst|cpu01:cpu0"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated
+ 17. Source assignments for ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated
+ 18. Parameter Settings for User Entity Instance: CPUClock:inst3|altpll:altpll_component
+ 19. Parameter Settings for User Entity Instance: ET3400_ROM:inst11|altsyncram:altsyncram_component
+ 20. Parameter Settings for User Entity Instance: ET3400_RAM:inst16|altsyncram:altsyncram_component
+ 21. altpll Parameter Settings by Entity Instance
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "wb_cpu01:inst|cpu01:cpu0"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -56,16 +57,16 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 12 07:28:02 2020           ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 06 15:22:12 2020           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; CPU_6801                                        ;
 ; Top-level Entity Name              ; Main                                            ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 1,130                                           ;
-;     Total combinational functions  ; 1,129                                           ;
-;     Dedicated logic registers      ; 217                                             ;
-; Total registers                    ; 217                                             ;
-; Total pins                         ; 55                                              ;
+; Total logic elements               ; 1,222                                           ;
+;     Total combinational functions  ; 1,215                                           ;
+;     Dedicated logic registers      ; 189                                             ;
+; Total registers                    ; 189                                             ;
+; Total pins                         ; 69                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 12,288                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -190,33 +191,35 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                    ; Library ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; System6801/cpu01/wb_cpu01.vhd    ; yes             ; User VHDL File                     ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd ;         ;
-; System6801/cpu01/cpu01.vhd       ; yes             ; User VHDL File                     ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd    ;         ;
-; CPUClock.v                       ; yes             ; User Wizard-Generated File         ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v                    ;         ;
-; Main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/Main.bdf                      ;         ;
-; ET3400_ROM.v                     ; yes             ; User Wizard-Generated File         ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v                  ;         ;
-; AddressSelect.v                  ; yes             ; User Verilog HDL File              ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v               ;         ;
-; dataEnable.v                     ; yes             ; User Verilog HDL File              ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/dataEnable.v                  ;         ;
-; ET3400_RAM.v                     ; yes             ; User Wizard-Generated File         ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v                  ;         ;
-; CPU_6801.mif                     ; yes             ; User Memory Initialization File    ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPU_6801.mif                  ;         ;
-; AddressableLatch.v               ; yes             ; User Verilog HDL File              ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v            ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf                                    ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc                                ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_pll.inc                               ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                             ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                             ;         ;
-; db/cpuclock_altpll.v             ; yes             ; Auto-Generated Megafunction        ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v          ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                         ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                   ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                 ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc                                    ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc                                    ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc                                  ;         ;
-; db/altsyncram_vk81.tdf           ; yes             ; Auto-Generated Megafunction        ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_vk81.tdf        ;         ;
-; db/altsyncram_4pe1.tdf           ; yes             ; Auto-Generated Megafunction        ; N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_4pe1.tdf        ;         ;
-; 16ndmux.bdf                      ; yes             ; Megafunction                       ; n:/intelfpga/18.1/quartus/libraries/others/maxplus2/16ndmux.bdf                                 ;         ;
+; System6801/cpu01/wb_cpu01.vhd    ; yes             ; User VHDL File                     ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd ;         ;
+; System6801/cpu01/cpu01.vhd       ; yes             ; User VHDL File                     ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd    ;         ;
+; CPUClock.v                       ; yes             ; User Wizard-Generated File         ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v                    ;         ;
+; Main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/Main.bdf                      ;         ;
+; ET3400_ROM.v                     ; yes             ; User Wizard-Generated File         ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v                  ;         ;
+; AddressSelect.v                  ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v               ;         ;
+; dataEnable.v                     ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/dataEnable.v                  ;         ;
+; ET3400_RAM.v                     ; yes             ; User Wizard-Generated File         ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v                  ;         ;
+; CPU_6801.mif                     ; yes             ; User Memory Initialization File    ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPU_6801.mif                  ;         ;
+; AddressableLatch.v               ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v            ;         ;
+; KeyboardDecoder.v                ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v             ;         ;
+; KeyboardEmulator.v               ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardEmulator.v            ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf                                    ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc                                ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_pll.inc                               ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                             ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                             ;         ;
+; db/cpuclock_altpll.v             ; yes             ; Auto-Generated Megafunction        ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                         ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                   ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                 ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc                                    ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc                                    ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc                                  ;         ;
+; db/altsyncram_m071.tdf           ; yes             ; Auto-Generated Megafunction        ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_m071.tdf        ;         ;
+; db/altsyncram_r4d1.tdf           ; yes             ; Auto-Generated Megafunction        ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_r4d1.tdf        ;         ;
+; 16ndmux.bdf                      ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/others/maxplus2/16ndmux.bdf                                 ;         ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
@@ -225,23 +228,23 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,130                                                                                  ;
+; Estimated Total logic elements              ; 1,222                                                                                  ;
 ;                                             ;                                                                                        ;
-; Total combinational functions               ; 1129                                                                                   ;
+; Total combinational functions               ; 1215                                                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 764                                                                                    ;
-;     -- 3 input functions                    ; 245                                                                                    ;
-;     -- <=2 input functions                  ; 120                                                                                    ;
+;     -- 4 input functions                    ; 790                                                                                    ;
+;     -- 3 input functions                    ; 304                                                                                    ;
+;     -- <=2 input functions                  ; 121                                                                                    ;
 ;                                             ;                                                                                        ;
 ; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 1038                                                                                   ;
+;     -- normal mode                          ; 1124                                                                                   ;
 ;     -- arithmetic mode                      ; 91                                                                                     ;
 ;                                             ;                                                                                        ;
-; Total registers                             ; 217                                                                                    ;
-;     -- Dedicated logic registers            ; 217                                                                                    ;
+; Total registers                             ; 189                                                                                    ;
+;     -- Dedicated logic registers            ; 189                                                                                    ;
 ;     -- I/O registers                        ; 0                                                                                      ;
 ;                                             ;                                                                                        ;
-; I/O pins                                    ; 55                                                                                     ;
+; I/O pins                                    ; 69                                                                                     ;
 ; Total memory bits                           ; 12288                                                                                  ;
 ;                                             ;                                                                                        ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
@@ -250,9 +253,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                      ;
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 189                                                                                    ;
-; Total fan-out                               ; 4820                                                                                   ;
-; Average fan-out                             ; 3.27                                                                                   ;
+; Maximum fan-out                             ; 209                                                                                    ;
+; Total fan-out                               ; 5078                                                                                   ;
+; Average fan-out                             ; 3.26                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
 
@@ -261,26 +264,28 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                    ; Entity Name      ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------+------------------+--------------+
-; |Main                                     ; 1129 (9)            ; 217 (0)                   ; 12288       ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |Main                                                                                  ; Main             ; work         ;
+; |Main                                     ; 1215 (15)           ; 189 (0)                   ; 12288       ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |Main                                                                                  ; Main             ; work         ;
 ;    |16ndmux:inst30|                       ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|16ndmux:inst30                                                                   ; 16ndmux          ; work         ;
-;    |AddressableLatch:inst21|              ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst21                                                          ; AddressableLatch ; work         ;
-;    |AddressableLatch:inst22|              ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst22                                                          ; AddressableLatch ; work         ;
-;    |AddressableLatch:inst23|              ; 16 (16)             ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst23                                                          ; AddressableLatch ; work         ;
-;    |AddressableLatch:inst24|              ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst24                                                          ; AddressableLatch ; work         ;
-;    |AddressableLatch:inst25|              ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst25                                                          ; AddressableLatch ; work         ;
-;    |AddressableLatch:inst26|              ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst26                                                          ; AddressableLatch ; work         ;
+;    |AddressableLatch:inst21|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst21                                                          ; AddressableLatch ; work         ;
+;    |AddressableLatch:inst22|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst22                                                          ; AddressableLatch ; work         ;
+;    |AddressableLatch:inst23|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst23                                                          ; AddressableLatch ; work         ;
+;    |AddressableLatch:inst24|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst24                                                          ; AddressableLatch ; work         ;
+;    |AddressableLatch:inst25|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst25                                                          ; AddressableLatch ; work         ;
+;    |AddressableLatch:inst26|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst26                                                          ; AddressableLatch ; work         ;
 ;    |CPUClock:inst3|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|CPUClock:inst3                                                                   ; CPUClock         ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|CPUClock:inst3|altpll:altpll_component                                           ; altpll           ; work         ;
 ;          |CPUClock_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated            ; CPUClock_altpll  ; work         ;
 ;    |ET3400_RAM:inst16|                    ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_RAM:inst16                                                                ; ET3400_RAM       ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_RAM:inst16|altsyncram:altsyncram_component                                ; altsyncram       ; work         ;
-;          |altsyncram_4pe1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_4pe1:auto_generated ; altsyncram_4pe1  ; work         ;
+;          |altsyncram_r4d1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated ; altsyncram_r4d1  ; work         ;
 ;    |ET3400_ROM:inst11|                    ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11                                                                ; ET3400_ROM       ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11|altsyncram:altsyncram_component                                ; altsyncram       ; work         ;
-;          |altsyncram_vk81:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_vk81:auto_generated ; altsyncram_vk81  ; work         ;
-;    |memoryDecoder:inst12|                 ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|memoryDecoder:inst12                                                             ; memoryDecoder    ; work         ;
-;    |wb_cpu01:inst|                        ; 1027 (1)            ; 169 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst                                                                    ; wb_cpu01         ; work         ;
-;       |cpu01:cpu0|                        ; 1026 (1026)         ; 169 (169)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst|cpu01:cpu0                                                         ; cpu01            ; work         ;
+;          |altsyncram_m071:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated ; altsyncram_m071  ; work         ;
+;    |KeyboardDecoder:inst1|                ; 16 (16)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|KeyboardDecoder:inst1                                                            ; KeyboardDecoder  ; work         ;
+;    |KeyboardEmulator:inst2|               ; 24 (24)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|KeyboardEmulator:inst2                                                           ; KeyboardEmulator ; work         ;
+;    |memoryDecoder:inst12|                 ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|memoryDecoder:inst12                                                             ; memoryDecoder    ; work         ;
+;    |wb_cpu01:inst|                        ; 1019 (0)            ; 169 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst                                                                    ; wb_cpu01         ; work         ;
+;       |cpu01:cpu0|                        ; 1019 (1019)         ; 169 (169)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst|cpu01:cpu0                                                         ; cpu01            ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -290,8 +295,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------+
 ; Name                                                                                        ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------+
-; ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_4pe1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 512          ; 8            ; --           ; --           ; 4096 ; None         ;
-; ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_vk81:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 1024         ; 8            ; --           ; --           ; 8192 ; CPU_6801.mif ;
+; ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 512          ; 8            ; --           ; --           ; 4096 ; None         ;
+; ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated|ALTSYNCRAM ; AUTO ; ROM         ; 1024         ; 8            ; --           ; --           ; 8192 ; CPU_6801.mif ;
 +---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------+
 
 
@@ -374,20 +379,85 @@ Encoding Type:  One-Hot
 +-------------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+------------------+------------------+------------------+------------------+---------------------+---------------------+---------------------+---------------------+----------------------+----------------------+--------------------+-----------------+----------------------+---------------------+----------------------+----------------------+--------------------+---------------------+---------------------+---------------------+---------------------+--------------------+--------------------+------------------+-----------------+--------------------+------------------+-----------------+-----------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+------------------+-------------------+-----------------+-------------------+------------------+---------------------+---------------------+--------------------+-------------------------+--------------------+-------------------+---------------------+----------------------+--------------------+-------------------+-------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+-----------------------------------------------+----------------------------------------+
-; Register name                                 ; Reason for Removal                     ;
-+-----------------------------------------------+----------------------------------------+
-; wb_cpu01:inst|cpu01:cpu0|nmi_req              ; Stuck at GND due to stuck port data_in ;
-; wb_cpu01:inst|cpu01:cpu0|iv[0]                ; Stuck at VCC due to stuck port data_in ;
-; wb_cpu01:inst|cpu01:cpu0|nmi_ack              ; Stuck at GND due to stuck port data_in ;
-; wb_cpu01:inst|cpu01:cpu0|iv[2]                ; Stuck at VCC due to stuck port data_in ;
-; wb_cpu01:inst|cpu01:cpu0|state.halt_state     ; Lost fanout                            ;
-; wb_cpu01:inst|cpu01:cpu0|state.int_mask_state ; Lost fanout                            ;
-; wb_cpu01:inst|cpu01:cpu0|state.error_state    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 7         ;                                        ;
-+-----------------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; AddressableLatch:inst23|Q[6]                        ; AddressableLatch:inst23|Q[6] ; yes                    ;
+; AddressableLatch:inst23|Q[5]                        ; AddressableLatch:inst23|Q[5] ; yes                    ;
+; AddressableLatch:inst23|Q[4]                        ; AddressableLatch:inst23|Q[4] ; yes                    ;
+; AddressableLatch:inst23|Q[3]                        ; AddressableLatch:inst23|Q[3] ; yes                    ;
+; AddressableLatch:inst23|Q[2]                        ; AddressableLatch:inst23|Q[2] ; yes                    ;
+; AddressableLatch:inst23|Q[1]                        ; AddressableLatch:inst23|Q[1] ; yes                    ;
+; AddressableLatch:inst23|Q[0]                        ; AddressableLatch:inst23|Q[0] ; yes                    ;
+; AddressableLatch:inst23|Q[7]                        ; AddressableLatch:inst23|Q[7] ; yes                    ;
+; AddressableLatch:inst22|Q[6]                        ; AddressableLatch:inst22|Q[6] ; yes                    ;
+; AddressableLatch:inst22|Q[5]                        ; AddressableLatch:inst22|Q[5] ; yes                    ;
+; AddressableLatch:inst22|Q[4]                        ; AddressableLatch:inst22|Q[4] ; yes                    ;
+; AddressableLatch:inst22|Q[3]                        ; AddressableLatch:inst22|Q[3] ; yes                    ;
+; AddressableLatch:inst22|Q[2]                        ; AddressableLatch:inst22|Q[2] ; yes                    ;
+; AddressableLatch:inst22|Q[1]                        ; AddressableLatch:inst22|Q[1] ; yes                    ;
+; AddressableLatch:inst22|Q[0]                        ; AddressableLatch:inst22|Q[0] ; yes                    ;
+; AddressableLatch:inst22|Q[7]                        ; AddressableLatch:inst22|Q[7] ; yes                    ;
+; AddressableLatch:inst21|Q[6]                        ; AddressableLatch:inst21|Q[6] ; yes                    ;
+; AddressableLatch:inst21|Q[5]                        ; AddressableLatch:inst21|Q[5] ; yes                    ;
+; AddressableLatch:inst21|Q[4]                        ; AddressableLatch:inst21|Q[4] ; yes                    ;
+; AddressableLatch:inst21|Q[3]                        ; AddressableLatch:inst21|Q[3] ; yes                    ;
+; AddressableLatch:inst21|Q[2]                        ; AddressableLatch:inst21|Q[2] ; yes                    ;
+; AddressableLatch:inst21|Q[1]                        ; AddressableLatch:inst21|Q[1] ; yes                    ;
+; AddressableLatch:inst21|Q[0]                        ; AddressableLatch:inst21|Q[0] ; yes                    ;
+; AddressableLatch:inst21|Q[7]                        ; AddressableLatch:inst21|Q[7] ; yes                    ;
+; AddressableLatch:inst25|Q[6]                        ; AddressableLatch:inst25|Q[6] ; yes                    ;
+; AddressableLatch:inst25|Q[5]                        ; AddressableLatch:inst25|Q[5] ; yes                    ;
+; AddressableLatch:inst25|Q[4]                        ; AddressableLatch:inst25|Q[4] ; yes                    ;
+; AddressableLatch:inst25|Q[3]                        ; AddressableLatch:inst25|Q[3] ; yes                    ;
+; AddressableLatch:inst25|Q[2]                        ; AddressableLatch:inst25|Q[2] ; yes                    ;
+; AddressableLatch:inst25|Q[1]                        ; AddressableLatch:inst25|Q[1] ; yes                    ;
+; AddressableLatch:inst25|Q[0]                        ; AddressableLatch:inst25|Q[0] ; yes                    ;
+; AddressableLatch:inst25|Q[7]                        ; AddressableLatch:inst25|Q[7] ; yes                    ;
+; AddressableLatch:inst24|Q[6]                        ; AddressableLatch:inst24|Q[6] ; yes                    ;
+; AddressableLatch:inst24|Q[5]                        ; AddressableLatch:inst24|Q[5] ; yes                    ;
+; AddressableLatch:inst24|Q[4]                        ; AddressableLatch:inst24|Q[4] ; yes                    ;
+; AddressableLatch:inst24|Q[3]                        ; AddressableLatch:inst24|Q[3] ; yes                    ;
+; AddressableLatch:inst24|Q[2]                        ; AddressableLatch:inst24|Q[2] ; yes                    ;
+; AddressableLatch:inst24|Q[1]                        ; AddressableLatch:inst24|Q[1] ; yes                    ;
+; AddressableLatch:inst24|Q[0]                        ; AddressableLatch:inst24|Q[0] ; yes                    ;
+; AddressableLatch:inst24|Q[7]                        ; AddressableLatch:inst24|Q[7] ; yes                    ;
+; AddressableLatch:inst26|Q[6]                        ; AddressableLatch:inst26|Q[6] ; yes                    ;
+; AddressableLatch:inst26|Q[5]                        ; AddressableLatch:inst26|Q[5] ; yes                    ;
+; AddressableLatch:inst26|Q[4]                        ; AddressableLatch:inst26|Q[4] ; yes                    ;
+; AddressableLatch:inst26|Q[3]                        ; AddressableLatch:inst26|Q[3] ; yes                    ;
+; AddressableLatch:inst26|Q[2]                        ; AddressableLatch:inst26|Q[2] ; yes                    ;
+; AddressableLatch:inst26|Q[1]                        ; AddressableLatch:inst26|Q[1] ; yes                    ;
+; AddressableLatch:inst26|Q[0]                        ; AddressableLatch:inst26|Q[0] ; yes                    ;
+; AddressableLatch:inst26|Q[7]                        ; AddressableLatch:inst26|Q[7] ; yes                    ;
+; Number of user-specified and inferred latches = 48  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++-----------------------------------------------+------------------------------------------------------+
+; Register name                                 ; Reason for Removal                                   ;
++-----------------------------------------------+------------------------------------------------------+
+; KeyboardEmulator:inst2|Keyb_Row_O[6]          ; Stuck at VCC due to stuck port data_in               ;
+; KeyboardDecoder:inst1|CurrentRowCount[0,1]    ; Stuck at GND due to stuck port data_in               ;
+; wb_cpu01:inst|cpu01:cpu0|nmi_req              ; Stuck at GND due to stuck port data_in               ;
+; KeyboardDecoder:inst1|Value[5]                ; Stuck at GND due to stuck port data_in               ;
+; KeyboardDecoder:inst1|Keyb_Value[5]           ; Stuck at GND due to stuck port data_in               ;
+; wb_cpu01:inst|cpu01:cpu0|iv[0]                ; Stuck at VCC due to stuck port data_in               ;
+; wb_cpu01:inst|cpu01:cpu0|nmi_ack              ; Stuck at GND due to stuck port data_in               ;
+; wb_cpu01:inst|cpu01:cpu0|iv[2]                ; Stuck at VCC due to stuck port data_in               ;
+; KeyboardDecoder:inst1|CurrentRow[0]           ; Merged with KeyboardDecoder:inst1|CurrentRowCount[2] ;
+; KeyboardDecoder:inst1|CycleCount[0]           ; Merged with KeyboardDecoder:inst1|CurrentRowCount[2] ;
+; KeyboardDecoder:inst1|CurrentRow[1]           ; Merged with KeyboardDecoder:inst1|CycleCount[1]      ;
+; wb_cpu01:inst|cpu01:cpu0|state.halt_state     ; Lost fanout                                          ;
+; wb_cpu01:inst|cpu01:cpu0|state.int_mask_state ; Lost fanout                                          ;
+; wb_cpu01:inst|cpu01:cpu0|state.error_state    ; Stuck at GND due to stuck port data_in               ;
+; Total Number of Removed Registers = 15        ;                                                      ;
++-----------------------------------------------+------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------+
@@ -397,6 +467,8 @@ Encoding Type:  One-Hot
 +----------------------------------+---------------------------+-------------------------------------------------------------------+
 ; wb_cpu01:inst|cpu01:cpu0|nmi_req ; Stuck at GND              ; wb_cpu01:inst|cpu01:cpu0|iv[0], wb_cpu01:inst|cpu01:cpu0|nmi_ack, ;
 ;                                  ; due to stuck port data_in ; wb_cpu01:inst|cpu01:cpu0|iv[2]                                    ;
+; KeyboardDecoder:inst1|Value[5]   ; Stuck at GND              ; KeyboardDecoder:inst1|Keyb_Value[5]                               ;
+;                                  ; due to stuck port data_in ;                                                                   ;
 +----------------------------------+---------------------------+-------------------------------------------------------------------+
 
 
@@ -405,12 +477,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 217   ;
+; Total registers                              ; 189   ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 54    ;
+; Number of registers using Clock Enable       ; 63    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -420,33 +492,37 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|accb[4]          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[3]          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[13]         ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|acca[1]          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[12]           ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[6]            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Main|KeyboardDecoder:inst1|Value[3]            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|accb[1]          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[1]          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[11]         ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Main|KeyboardEmulator:inst2|Keyb_Row_O[1]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|acca[2]          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[13]           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[7]            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|KeyboardDecoder:inst1|Value[1]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|state            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_adc ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_and ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_sec ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|state            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|DAT_I                                     ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector2        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector45       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector32       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector35       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|DAT_I                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Main|DAT_I                                     ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector9        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector42       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector30       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector37       ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector12       ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector142      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector151      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector55       ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector19       ;
-; 13:1               ; 6 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector175      ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector171      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector144      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector150      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector56       ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector17       ;
+; 13:1               ; 6 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector179      ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector168      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
-; Source assignments for ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_vk81:auto_generated ;
+; Source assignments for ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                        ;
 +---------------------------------+--------------------+------+-------------------------------------------+
@@ -455,7 +531,7 @@ Encoding Type:  One-Hot
 
 
 +---------------------------------------------------------------------------------------------------------+
-; Source assignments for ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_4pe1:auto_generated ;
+; Source assignments for ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                        ;
 +---------------------------------+--------------------+------+-------------------------------------------+
@@ -503,9 +579,9 @@ Encoding Type:  One-Hot
 ; CLK5_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK4_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK3_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK2_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK1_MULTIPLY_BY              ; 8                          ; Signed Integer         ;
-; CLK0_MULTIPLY_BY              ; 2                          ; Signed Integer         ;
+; CLK2_MULTIPLY_BY              ; 12                         ; Signed Integer         ;
+; CLK1_MULTIPLY_BY              ; 12                         ; Signed Integer         ;
+; CLK0_MULTIPLY_BY              ; 6                          ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK8_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK7_DIVIDE_BY                ; 0                          ; Untyped                ;
@@ -513,9 +589,9 @@ Encoding Type:  One-Hot
 ; CLK5_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK4_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK3_DIVIDE_BY                ; 1                          ; Untyped                ;
-; CLK2_DIVIDE_BY                ; 1                          ; Untyped                ;
-; CLK1_DIVIDE_BY                ; 25                         ; Signed Integer         ;
-; CLK0_DIVIDE_BY                ; 25                         ; Signed Integer         ;
+; CLK2_DIVIDE_BY                ; 5                          ; Signed Integer         ;
+; CLK1_DIVIDE_BY                ; 5                          ; Signed Integer         ;
+; CLK0_DIVIDE_BY                ; 5                          ; Signed Integer         ;
 ; CLK9_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK8_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK7_PHASE_SHIFT              ; 0                          ; Untyped                ;
@@ -523,9 +599,9 @@ Encoding Type:  One-Hot
 ; CLK5_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK4_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK3_PHASE_SHIFT              ; 0                          ; Untyped                ;
-; CLK2_PHASE_SHIFT              ; 0                          ; Untyped                ;
+; CLK2_PHASE_SHIFT              ; 4167                       ; Untyped                ;
 ; CLK1_PHASE_SHIFT              ; 0                          ; Untyped                ;
-; CLK0_PHASE_SHIFT              ; 125000                     ; Untyped                ;
+; CLK0_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK5_TIME_DELAY               ; 0                          ; Untyped                ;
 ; CLK4_TIME_DELAY               ; 0                          ; Untyped                ;
 ; CLK3_TIME_DELAY               ; 0                          ; Untyped                ;
@@ -539,7 +615,7 @@ Encoding Type:  One-Hot
 ; CLK5_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK4_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK3_DUTY_CYCLE               ; 50                         ; Untyped                ;
-; CLK2_DUTY_CYCLE               ; 50                         ; Untyped                ;
+; CLK2_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK1_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK0_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                ;
@@ -771,7 +847,7 @@ Encoding Type:  One-Hot
 ; PORT_CLKBAD1                  ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK0                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK1                     ; PORT_USED                  ; Untyped                ;
-; PORT_CLK2                     ; PORT_UNUSED                ; Untyped                ;
+; PORT_CLK2                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK3                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK4                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK5                     ; PORT_UNUSED                ; Untyped                ;
@@ -852,7 +928,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_A                            ; 8                    ; Signed Integer                     ;
 ; WIDTHAD_A                          ; 10                   ; Signed Integer                     ;
 ; NUMWORDS_A                         ; 1024                 ; Signed Integer                     ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                            ;
+; OUTDATA_REG_A                      ; CLOCK1               ; Untyped                            ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
@@ -893,7 +969,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                            ;
-; CBXI_PARAMETER                     ; altsyncram_vk81      ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_m071      ; Untyped                            ;
 +------------------------------------+----------------------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -913,7 +989,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_A                            ; 8                    ; Signed Integer                     ;
 ; WIDTHAD_A                          ; 9                    ; Signed Integer                     ;
 ; NUMWORDS_A                         ; 512                  ; Signed Integer                     ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                            ;
+; OUTDATA_REG_A                      ; CLOCK1               ; Untyped                            ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
@@ -954,7 +1030,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                            ;
-; CBXI_PARAMETER                     ; altsyncram_4pe1      ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_r4d1      ; Untyped                            ;
 +------------------------------------+----------------------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -986,7 +1062,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; ROM                                               ;
 ;     -- WIDTH_A                            ; 8                                                 ;
 ;     -- NUMWORDS_A                         ; 1024                                              ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK1                                            ;
 ;     -- WIDTH_B                            ; 1                                                 ;
 ;     -- NUMWORDS_B                         ; 1                                                 ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
@@ -997,7 +1073,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                       ;
 ;     -- WIDTH_A                            ; 8                                                 ;
 ;     -- NUMWORDS_A                         ; 512                                               ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK1                                            ;
 ;     -- WIDTH_B                            ; 1                                                 ;
 ;     -- NUMWORDS_B                         ; 1                                                 ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
@@ -1022,25 +1098,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 55                          ;
-; cycloneiii_ff         ; 217                         ;
-;     ENA               ; 54                          ;
+; boundary_port         ; 69                          ;
+; cycloneiii_ff         ; 189                         ;
+;     ENA               ; 63                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 153                         ;
-; cycloneiii_lcell_comb ; 1131                        ;
+;     plain             ; 116                         ;
+; cycloneiii_lcell_comb ; 1220                        ;
 ;     arith             ; 91                          ;
 ;         2 data inputs ; 17                          ;
 ;         3 data inputs ; 74                          ;
-;     normal            ; 1040                        ;
-;         1 data inputs ; 4                           ;
+;     normal            ; 1129                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
 ;         2 data inputs ; 101                         ;
-;         3 data inputs ; 171                         ;
-;         4 data inputs ; 764                         ;
+;         3 data inputs ; 230                         ;
+;         4 data inputs ; 790                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 18.20                       ;
-; Average LUT depth     ; 11.24                       ;
+; Max LUT depth         ; 18.10                       ;
+; Average LUT depth     ; 10.56                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1059,73 +1136,80 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Thu Mar 12 07:27:47 2020
+    Info: Processing started: Sun Dec 06 15:21:55 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU_6801 -c CPU_6801
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/ioport/ioport.vhd
-    Info (12022): Found design unit 1: ioport-ioport_arch File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/ioport.vhd Line: 46
-    Info (12023): Found entity 1: ioport File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/ioport.vhd Line: 30
+    Info (12022): Found design unit 1: ioport-ioport_arch File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/ioport.vhd Line: 46
+    Info (12023): Found entity 1: ioport File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/ioport.vhd Line: 30
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/ioport/wb_ioport.vhd
-    Info (12022): Found design unit 1: wb_ioport-bhv_wb_ioport File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/wb_ioport.vhd Line: 60
-    Info (12023): Found entity 1: wb_ioport File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/wb_ioport.vhd Line: 37
+    Info (12022): Found design unit 1: wb_ioport-bhv_wb_ioport File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/wb_ioport.vhd Line: 60
+    Info (12023): Found entity 1: wb_ioport File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/wb_ioport.vhd Line: 37
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/cpu01/wb_cpu01.vhd
-    Info (12022): Found design unit 1: wb_cpu01-bhv_wb_cpu01 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 58
-    Info (12023): Found entity 1: wb_cpu01 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 36
+    Info (12022): Found design unit 1: wb_cpu01-bhv_wb_cpu01 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 58
+    Info (12023): Found entity 1: wb_cpu01 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 36
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/cpu01/cpu01.vhd
-    Info (12022): Found design unit 1: cpu01-CPU_ARCH File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 90
-    Info (12023): Found entity 1: cpu01 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 68
+    Info (12022): Found design unit 1: cpu01-CPU_ARCH File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 90
+    Info (12023): Found entity 1: cpu01 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 68
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/rams/wb_lpm_ram.vhd
-    Info (12022): Found design unit 1: wb_lpm_ram-bhv_wb_lpm_ram File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_lpm_ram.vhd Line: 62
-    Info (12023): Found entity 1: wb_lpm_ram File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_lpm_ram.vhd Line: 42
+    Info (12022): Found design unit 1: wb_lpm_ram-bhv_wb_lpm_ram File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_lpm_ram.vhd Line: 62
+    Info (12023): Found entity 1: wb_lpm_ram File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_lpm_ram.vhd Line: 42
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/rams/wb_ram.vhd
-    Info (12022): Found design unit 1: wb_ram-bhv_wb_ram File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_ram.vhd Line: 57
-    Info (12023): Found entity 1: wb_ram File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_ram.vhd Line: 31
+    Info (12022): Found design unit 1: wb_ram-bhv_wb_ram File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_ram.vhd Line: 57
+    Info (12023): Found entity 1: wb_ram File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/rams/wb_ram.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/roms/wb_rom.vhd
-    Info (12022): Found design unit 1: wb_rom-bhv_wb_rom File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/roms/wb_rom.vhd Line: 54
-    Info (12023): Found entity 1: wb_rom File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/roms/wb_rom.vhd Line: 34
+    Info (12022): Found design unit 1: wb_rom-bhv_wb_rom File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/roms/wb_rom.vhd Line: 54
+    Info (12023): Found entity 1: wb_rom File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/roms/wb_rom.vhd Line: 34
 Info (12021): Found 3 design units, including 1 entities, in source file system6801/cyclone_devkit/wb_cyclone_cpu68.vhd
-    Info (12022): Found design unit 1: my_local_pkg File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cyclone_devkit/wb_cyclone_cpu68.vhd Line: 49
-    Info (12022): Found design unit 2: wb_cyclone_cpu68-bhv_wb_cyclone_cpu68 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cyclone_devkit/wb_cyclone_cpu68.vhd Line: 133
-    Info (12023): Found entity 1: wb_cyclone_cpu68 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cyclone_devkit/wb_cyclone_cpu68.vhd Line: 78
+    Info (12022): Found design unit 1: my_local_pkg File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cyclone_devkit/wb_cyclone_cpu68.vhd Line: 49
+    Info (12022): Found design unit 2: wb_cyclone_cpu68-bhv_wb_cyclone_cpu68 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cyclone_devkit/wb_cyclone_cpu68.vhd Line: 133
+    Info (12023): Found entity 1: wb_cyclone_cpu68 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cyclone_devkit/wb_cyclone_cpu68.vhd Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file cpuclock.v
-    Info (12023): Found entity 1: CPUClock File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 39
+    Info (12023): Found entity 1: CPUClock File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file main.bdf
     Info (12023): Found entity 1: Main
 Info (12021): Found 1 design units, including 1 entities, in source file et3400_rom.v
-    Info (12023): Found entity 1: ET3400_ROM File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 39
+    Info (12023): Found entity 1: ET3400_ROM File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file addressselect.v
-    Info (12023): Found entity 1: memoryDecoder File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 1
+    Info (12023): Found entity 1: memoryDecoder File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dataenable.v
-    Info (12023): Found entity 1: dataEnable File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/dataEnable.v Line: 1
+    Info (12023): Found entity 1: dataEnable File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/dataEnable.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file et3400_ram.v
-    Info (12023): Found entity 1: ET3400_RAM File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 39
+    Info (12023): Found entity 1: ET3400_RAM File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file addressablelatch.v
-    Info (12023): Found entity 1: AddressableLatch File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 1
+    Info (12023): Found entity 1: AddressableLatch File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file keyboarddecoder.v
+    Info (12023): Found entity 1: KeyboardDecoder File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file keyboardemulator.v
+    Info (12023): Found entity 1: KeyboardEmulator File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardEmulator.v Line: 3
 Info (12127): Elaborating entity "Main" for the top level hierarchy
-Info (12128): Elaborating entity "AddressableLatch" for hierarchy "AddressableLatch:inst23"
-Info (12128): Elaborating entity "memoryDecoder" for hierarchy "memoryDecoder:inst12"
-Warning (10230): Verilog HDL assignment warning at AddressSelect.v(23): truncated value with size 16 to match size of target (10) File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 23
-Warning (10230): Verilog HDL assignment warning at AddressSelect.v(24): truncated value with size 16 to match size of target (9) File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 24
-Warning (10230): Verilog HDL assignment warning at AddressSelect.v(25): truncated value with size 16 to match size of target (4) File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 25
-Warning (10230): Verilog HDL assignment warning at AddressSelect.v(26): truncated value with size 16 to match size of target (7) File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 26
-Info (12128): Elaborating entity "wb_cpu01" for hierarchy "wb_cpu01:inst"
-Warning (10036): Verilog HDL or VHDL warning at wb_cpu01.vhd(88): object "test_alu" assigned a value but never read File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 88
-Warning (10036): Verilog HDL or VHDL warning at wb_cpu01.vhd(89): object "test_cc" assigned a value but never read File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 89
-Info (12128): Elaborating entity "cpu01" for hierarchy "wb_cpu01:inst|cpu01:cpu0" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 96
+Info (12128): Elaborating entity "KeyboardDecoder" for hierarchy "KeyboardDecoder:inst1"
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(19): truncated value with size 32 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 19
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(32): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 32
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(36): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 36
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(40): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 40
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(44): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 44
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(51): truncated value with size 32 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 51
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(52): truncated value with size 32 to match size of target (3) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 52
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(53): truncated value with size 32 to match size of target (2) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 53
 Info (12128): Elaborating entity "CPUClock" for hierarchy "CPUClock:inst3"
-Info (12128): Elaborating entity "altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 107
-Info (12130): Elaborated megafunction instantiation "CPUClock:inst3|altpll:altpll_component" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 107
-Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component" with the following parameter: File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 107
+Info (12128): Elaborating entity "altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 111
+Info (12130): Elaborated megafunction instantiation "CPUClock:inst3|altpll:altpll_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 111
+Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component" with the following parameter: File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 111
     Info (12134): Parameter "bandwidth_type" = "AUTO"
-    Info (12134): Parameter "clk0_divide_by" = "25"
+    Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "2"
-    Info (12134): Parameter "clk0_phase_shift" = "125000"
-    Info (12134): Parameter "clk1_divide_by" = "25"
+    Info (12134): Parameter "clk0_multiply_by" = "6"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "5"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
-    Info (12134): Parameter "clk1_multiply_by" = "8"
+    Info (12134): Parameter "clk1_multiply_by" = "12"
     Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk2_divide_by" = "5"
+    Info (12134): Parameter "clk2_duty_cycle" = "50"
+    Info (12134): Parameter "clk2_multiply_by" = "12"
+    Info (12134): Parameter "clk2_phase_shift" = "4167"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
@@ -1160,7 +1244,7 @@ Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component"
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
     Info (12134): Parameter "port_clk1" = "PORT_USED"
-    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_USED"
     Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
@@ -1177,95 +1261,194 @@ Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/cpuclock_altpll.v
-    Info (12023): Found entity 1: CPUClock_altpll File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v Line: 30
-Info (12128): Elaborating entity "CPUClock_altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated" File: n:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+    Info (12023): Found entity 1: CPUClock_altpll File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v Line: 30
+Info (12128): Elaborating entity "CPUClock_altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated" File: f:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "AddressableLatch" for hierarchy "AddressableLatch:inst23"
+Warning (10240): Verilog HDL Always Construct warning at AddressableLatch.v(10): inferring latch(es) for variable "Q", which holds its previous value in one or more paths through the always construct File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[0]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[1]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[2]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[3]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[4]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[5]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[6]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (10041): Inferred latch for "Q[7]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+Info (12128): Elaborating entity "memoryDecoder" for hierarchy "memoryDecoder:inst12"
+Warning (10230): Verilog HDL assignment warning at AddressSelect.v(23): truncated value with size 16 to match size of target (10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 23
+Warning (10230): Verilog HDL assignment warning at AddressSelect.v(24): truncated value with size 16 to match size of target (9) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 24
+Warning (10230): Verilog HDL assignment warning at AddressSelect.v(25): truncated value with size 16 to match size of target (7) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 25
+Warning (10230): Verilog HDL assignment warning at AddressSelect.v(26): truncated value with size 16 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressSelect.v Line: 26
+Info (12128): Elaborating entity "wb_cpu01" for hierarchy "wb_cpu01:inst"
+Warning (10036): Verilog HDL or VHDL warning at wb_cpu01.vhd(88): object "test_alu" assigned a value but never read File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 88
+Warning (10036): Verilog HDL or VHDL warning at wb_cpu01.vhd(89): object "test_cc" assigned a value but never read File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 89
+Info (12128): Elaborating entity "cpu01" for hierarchy "wb_cpu01:inst|cpu01:cpu0" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/wb_cpu01.vhd Line: 96
 Info (12128): Elaborating entity "dataEnable" for hierarchy "dataEnable:inst14"
 Info (12128): Elaborating entity "ET3400_ROM" for hierarchy "ET3400_ROM:inst11"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "ET3400_ROM:inst11|altsyncram:altsyncram_component" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 81
-Info (12130): Elaborated megafunction instantiation "ET3400_ROM:inst11|altsyncram:altsyncram_component" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 81
-Info (12133): Instantiated megafunction "ET3400_ROM:inst11|altsyncram:altsyncram_component" with the following parameter: File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 81
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ET3400_ROM:inst11|altsyncram:altsyncram_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 83
+Info (12130): Elaborated megafunction instantiation "ET3400_ROM:inst11|altsyncram:altsyncram_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 83
+Info (12133): Instantiated megafunction "ET3400_ROM:inst11|altsyncram:altsyncram_component" with the following parameter: File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_ROM.v Line: 83
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "CPU_6801.mif"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "1024"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK1"
     Info (12134): Parameter "widthad_a" = "10"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vk81.tdf
-    Info (12023): Found entity 1: altsyncram_vk81 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_vk81.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_vk81" for hierarchy "ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_vk81:auto_generated" File: n:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m071.tdf
+    Info (12023): Found entity 1: altsyncram_m071 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_m071.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_m071" for hierarchy "ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated" File: f:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12128): Elaborating entity "ET3400_RAM" for hierarchy "ET3400_RAM:inst16"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 85
-Info (12130): Elaborated megafunction instantiation "ET3400_RAM:inst16|altsyncram:altsyncram_component" File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 85
-Info (12133): Instantiated megafunction "ET3400_RAM:inst16|altsyncram:altsyncram_component" with the following parameter: File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 85
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 87
+Info (12130): Elaborated megafunction instantiation "ET3400_RAM:inst16|altsyncram:altsyncram_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 87
+Info (12133): Instantiated megafunction "ET3400_RAM:inst16|altsyncram:altsyncram_component" with the following parameter: File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 87
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "512"
     Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK1"
     Info (12134): Parameter "power_up_uninitialized" = "FALSE"
     Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
     Info (12134): Parameter "widthad_a" = "9"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4pe1.tdf
-    Info (12023): Found entity 1: altsyncram_4pe1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_4pe1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_4pe1" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_4pe1:auto_generated" File: n:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "16ndmux" for hierarchy "16ndmux:inst27"
-Info (12130): Elaborated megafunction instantiation "16ndmux:inst27"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r4d1.tdf
+    Info (12023): Found entity 1: altsyncram_r4d1 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_r4d1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_r4d1" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated" File: f:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "KeyboardEmulator" for hierarchy "KeyboardEmulator:inst2"
+Info (12128): Elaborating entity "16ndmux" for hierarchy "16ndmux:inst30"
+Info (12130): Elaborated megafunction instantiation "16ndmux:inst30"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector25" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector26" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector27" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector28" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector29" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector30" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector31" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector32" into a selector File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
-Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector7~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector7~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector0~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector0~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector1~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector1~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector2~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector2~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector3~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector3~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector4~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector4~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector6~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector6~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector5~0 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
-    Warning (19017): Found clock multiplexer wb_cpu01:inst|cpu01:cpu0|Selector5~1 File: N:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 193
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector25" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector26" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector27" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector28" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector29" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector30" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector31" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+    Warning (13048): Converted tri-state node feeding "wb_cpu01:inst|cpu01:cpu0|Selector32" into a selector File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 288
+Warning (13012): Latch AddressableLatch:inst23|Q[6] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[5] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[4] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[3] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[2] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[1] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[0] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst23|Q[7] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[6] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[5] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[4] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[3] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[2] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[1] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[0] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst22|Q[7] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[6] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[5] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[4] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[3] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[2] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[1] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[0] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst21|Q[7] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[6] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[5] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[4] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[3] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[2] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[1] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[0] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst25|Q[7] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[6] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[5] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[4] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[3] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[2] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[1] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[0] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst24|Q[7] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[6] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[5] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[4] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[3] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[2] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[1] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[0] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13012): Latch AddressableLatch:inst26|Q[7] has unsafe behavior File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal wb_cpu01:inst|cpu01:cpu0|pc[8] File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/cpu01/cpu01.vhd Line: 303
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]"
-Info (21057): Implemented 1202 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 1130 logic cells
+Info (21057): Implemented 1308 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 62 output pins
+    Info (21061): Implemented 1222 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Thu Mar 12 07:28:02 2020
-    Info: Elapsed time: 00:00:15
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 125 warnings
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Sun Dec 06 15:22:12 2020
+    Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:25
 
 

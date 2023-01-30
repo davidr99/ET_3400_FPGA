@@ -1,0 +1,34 @@
+// This maps a 4x4 keyboard to a 3x6
+
+module keyboardDecoder(Clock, Keyb_Row_I, Keyb_Col_O, Keyb_Value);
+	input Clock;
+	input Read_Keyb;
+	
+	//	Live Keyboard
+	input [3:0] Keyb_Row_I;
+	output [3:0] Keyb_Col_O;
+	
+	// Maped keyboard
+	output reg [5:0] Keyb_Value;
+	
+	reg [1:0] CurrentRow;
+	
+	assign Keyb_Col_O = CurrentRow;
+	
+	always @ (posedge clock)
+		begin		
+			CurrentRow = CurrentRow + 1;
+		end
+		
+	always @ (negedge clock)
+		begin
+		
+			if (Keyb_Row_I > 0)
+				begin
+					Keyb_Value = (CurrentRow * 4) + ((Keyb_Row_I & 4'h01) + (Keyb_Row_I & 4'h02) + (Keyb_Row_I & 4'h04) + (Keyb_Row_I & 4'h08));
+				end
+				
+		end
+			
+			
+endmodule

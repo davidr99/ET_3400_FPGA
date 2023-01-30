@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at KeyboardDecoder.v(25): always construct contains both blocking and non-blocking assignments File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 25
