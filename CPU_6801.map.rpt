@@ -1,6 +1,6 @@
 Analysis & Synthesis report for CPU_6801
-Sun Dec 06 15:22:12 2020
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Mon May 15 22:48:48 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -32,15 +32,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
  24. Post-Synthesis Netlist Statistics for Top Partition
  25. Elapsed Time Per Partition
  26. Analysis & Synthesis Messages
+ 27. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -50,30 +51,31 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 06 15:22:12 2020           ;
-; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Revision Name                      ; CPU_6801                                        ;
-; Top-level Entity Name              ; Main                                            ;
-; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 1,222                                           ;
-;     Total combinational functions  ; 1,215                                           ;
-;     Dedicated logic registers      ; 189                                             ;
-; Total registers                    ; 189                                             ;
-; Total pins                         ; 69                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 12,288                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 1                                               ;
-; UFM blocks                         ; 0                                               ;
-; ADC blocks                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon May 15 22:48:48 2023          ;
+; Quartus Prime Version              ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name                      ; CPU_6801                                       ;
+; Top-level Entity Name              ; Main                                           ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 1,237                                          ;
+;     Total combinational functions  ; 1,221                                          ;
+;     Dedicated logic registers      ; 200                                            ;
+; Total registers                    ; 200                                            ;
+; Total pins                         ; 68                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 12,288                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 1                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -167,11 +169,11 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -182,7 +184,7 @@ refer to the applicable agreement for further details.
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
-;     Processors 9-12        ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -203,23 +205,23 @@ refer to the applicable agreement for further details.
 ; AddressableLatch.v               ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v            ;         ;
 ; KeyboardDecoder.v                ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v             ;         ;
 ; KeyboardEmulator.v               ; yes             ; User Verilog HDL File              ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardEmulator.v            ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf                                    ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc                                ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_pll.inc                               ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/stratixii_pll.inc                             ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc                             ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf                            ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc                        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_pll.inc                       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratixii_pll.inc                     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/cycloneii_pll.inc                     ;         ;
 ; db/cpuclock_altpll.v             ; yes             ; Auto-Generated Megafunction        ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v          ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                         ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                   ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                 ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc                                    ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc                                    ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc                                  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc                            ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc                            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
 ; db/altsyncram_m071.tdf           ; yes             ; Auto-Generated Megafunction        ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_m071.tdf        ;         ;
 ; db/altsyncram_r4d1.tdf           ; yes             ; Auto-Generated Megafunction        ; F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_r4d1.tdf        ;         ;
-; 16ndmux.bdf                      ; yes             ; Megafunction                       ; f:/intelfpga/18.1/quartus/libraries/others/maxplus2/16ndmux.bdf                                 ;         ;
+; 16ndmux.bdf                      ; yes             ; Megafunction                       ; e:/intelfpga_lite/22.1std/quartus/libraries/others/maxplus2/16ndmux.bdf                         ;         ;
 +----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
@@ -228,23 +230,23 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,222                                                                                  ;
+; Estimated Total logic elements              ; 1,237                                                                                  ;
 ;                                             ;                                                                                        ;
-; Total combinational functions               ; 1215                                                                                   ;
+; Total combinational functions               ; 1221                                                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 790                                                                                    ;
-;     -- 3 input functions                    ; 304                                                                                    ;
-;     -- <=2 input functions                  ; 121                                                                                    ;
+;     -- 4 input functions                    ; 797                                                                                    ;
+;     -- 3 input functions                    ; 317                                                                                    ;
+;     -- <=2 input functions                  ; 107                                                                                    ;
 ;                                             ;                                                                                        ;
 ; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 1124                                                                                   ;
+;     -- normal mode                          ; 1130                                                                                   ;
 ;     -- arithmetic mode                      ; 91                                                                                     ;
 ;                                             ;                                                                                        ;
-; Total registers                             ; 189                                                                                    ;
-;     -- Dedicated logic registers            ; 189                                                                                    ;
+; Total registers                             ; 200                                                                                    ;
+;     -- Dedicated logic registers            ; 200                                                                                    ;
 ;     -- I/O registers                        ; 0                                                                                      ;
 ;                                             ;                                                                                        ;
-; I/O pins                                    ; 69                                                                                     ;
+; I/O pins                                    ; 68                                                                                     ;
 ; Total memory bits                           ; 12288                                                                                  ;
 ;                                             ;                                                                                        ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
@@ -253,8 +255,8 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                      ;
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 209                                                                                    ;
-; Total fan-out                               ; 5078                                                                                   ;
+; Maximum fan-out                             ; 219                                                                                    ;
+; Total fan-out                               ; 5138                                                                                   ;
 ; Average fan-out                             ; 3.26                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -264,7 +266,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                    ; Entity Name      ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------+------------------+--------------+
-; |Main                                     ; 1215 (15)           ; 189 (0)                   ; 12288       ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |Main                                                                                  ; Main             ; work         ;
+; |Main                                     ; 1221 (15)           ; 200 (0)                   ; 12288       ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |Main                                                                                  ; Main             ; work         ;
 ;    |16ndmux:inst30|                       ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|16ndmux:inst30                                                                   ; 16ndmux          ; work         ;
 ;    |AddressableLatch:inst21|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst21                                                          ; AddressableLatch ; work         ;
 ;    |AddressableLatch:inst22|              ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|AddressableLatch:inst22                                                          ; AddressableLatch ; work         ;
@@ -281,11 +283,11 @@ refer to the applicable agreement for further details.
 ;    |ET3400_ROM:inst11|                    ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11                                                                ; ET3400_ROM       ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11|altsyncram:altsyncram_component                                ; altsyncram       ; work         ;
 ;          |altsyncram_m071:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated ; altsyncram_m071  ; work         ;
-;    |KeyboardDecoder:inst1|                ; 16 (16)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|KeyboardDecoder:inst1                                                            ; KeyboardDecoder  ; work         ;
-;    |KeyboardEmulator:inst2|               ; 24 (24)             ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|KeyboardEmulator:inst2                                                           ; KeyboardEmulator ; work         ;
-;    |memoryDecoder:inst12|                 ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|memoryDecoder:inst12                                                             ; memoryDecoder    ; work         ;
-;    |wb_cpu01:inst|                        ; 1019 (0)            ; 169 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst                                                                    ; wb_cpu01         ; work         ;
-;       |cpu01:cpu0|                        ; 1019 (1019)         ; 169 (169)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst|cpu01:cpu0                                                         ; cpu01            ; work         ;
+;    |KeyboardDecoder:inst1|                ; 18 (18)             ; 15 (15)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|KeyboardDecoder:inst1                                                            ; KeyboardDecoder  ; work         ;
+;    |KeyboardEmulator:inst2|               ; 24 (24)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|KeyboardEmulator:inst2                                                           ; KeyboardEmulator ; work         ;
+;    |memoryDecoder:inst12|                 ; 35 (35)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|memoryDecoder:inst12                                                             ; memoryDecoder    ; work         ;
+;    |wb_cpu01:inst|                        ; 1027 (0)            ; 169 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst                                                                    ; wb_cpu01         ; work         ;
+;       |cpu01:cpu0|                        ; 1027 (1027)         ; 169 (169)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Main|wb_cpu01:inst|cpu01:cpu0                                                         ; cpu01            ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -437,39 +439,42 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                   ;
-+-----------------------------------------------+------------------------------------------------------+
-; Register name                                 ; Reason for Removal                                   ;
-+-----------------------------------------------+------------------------------------------------------+
-; KeyboardEmulator:inst2|Keyb_Row_O[6]          ; Stuck at VCC due to stuck port data_in               ;
-; KeyboardDecoder:inst1|CurrentRowCount[0,1]    ; Stuck at GND due to stuck port data_in               ;
-; wb_cpu01:inst|cpu01:cpu0|nmi_req              ; Stuck at GND due to stuck port data_in               ;
-; KeyboardDecoder:inst1|Value[5]                ; Stuck at GND due to stuck port data_in               ;
-; KeyboardDecoder:inst1|Keyb_Value[5]           ; Stuck at GND due to stuck port data_in               ;
-; wb_cpu01:inst|cpu01:cpu0|iv[0]                ; Stuck at VCC due to stuck port data_in               ;
-; wb_cpu01:inst|cpu01:cpu0|nmi_ack              ; Stuck at GND due to stuck port data_in               ;
-; wb_cpu01:inst|cpu01:cpu0|iv[2]                ; Stuck at VCC due to stuck port data_in               ;
-; KeyboardDecoder:inst1|CurrentRow[0]           ; Merged with KeyboardDecoder:inst1|CurrentRowCount[2] ;
-; KeyboardDecoder:inst1|CycleCount[0]           ; Merged with KeyboardDecoder:inst1|CurrentRowCount[2] ;
-; KeyboardDecoder:inst1|CurrentRow[1]           ; Merged with KeyboardDecoder:inst1|CycleCount[1]      ;
-; wb_cpu01:inst|cpu01:cpu0|state.halt_state     ; Lost fanout                                          ;
-; wb_cpu01:inst|cpu01:cpu0|state.int_mask_state ; Lost fanout                                          ;
-; wb_cpu01:inst|cpu01:cpu0|state.error_state    ; Stuck at GND due to stuck port data_in               ;
-; Total Number of Removed Registers = 15        ;                                                      ;
-+-----------------------------------------------+------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++-----------------------------------------------+----------------------------------------------------+
+; Register name                                 ; Reason for Removal                                 ;
++-----------------------------------------------+----------------------------------------------------+
+; KeyboardEmulator:inst2|Keyb_Row_O[6]          ; Stuck at VCC due to stuck port data_in             ;
+; KeyboardDecoder:inst1|CurrentColVal[0,1]      ; Stuck at GND due to stuck port data_in             ;
+; KeyboardDecoder:inst1|CurrentCol[1]           ; Merged with KeyboardDecoder:inst1|CurrentColVal[3] ;
+; KeyboardDecoder:inst1|CurrentCol[0]           ; Merged with KeyboardDecoder:inst1|CurrentColVal[2] ;
+; wb_cpu01:inst|cpu01:cpu0|nmi_req              ; Stuck at GND due to stuck port data_in             ;
+; KeyboardDecoder:inst1|Value[5]                ; Stuck at GND due to stuck port data_in             ;
+; KeyboardDecoder:inst1|Keyb_Value[5]           ; Stuck at GND due to stuck port data_in             ;
+; KeyboardEmulator:inst2|Keyb_Temp_Value[5]     ; Stuck at GND due to stuck port data_in             ;
+; KeyboardEmulator:inst2|Keyb_Clocked_Value[5]  ; Stuck at GND due to stuck port data_in             ;
+; wb_cpu01:inst|cpu01:cpu0|iv[0]                ; Stuck at VCC due to stuck port data_in             ;
+; wb_cpu01:inst|cpu01:cpu0|nmi_ack              ; Stuck at GND due to stuck port data_in             ;
+; wb_cpu01:inst|cpu01:cpu0|iv[2]                ; Stuck at VCC due to stuck port data_in             ;
+; KeyboardDecoder:inst1|CycleCount[0]           ; Merged with KeyboardDecoder:inst1|CurrentColVal[2] ;
+; wb_cpu01:inst|cpu01:cpu0|state.halt_state     ; Lost fanout                                        ;
+; wb_cpu01:inst|cpu01:cpu0|state.int_mask_state ; Lost fanout                                        ;
+; wb_cpu01:inst|cpu01:cpu0|state.error_state    ; Stuck at GND due to stuck port data_in             ;
+; KeyboardDecoder:inst1|CycleCount[1]           ; Merged with KeyboardDecoder:inst1|CurrentColVal[3] ;
+; Total Number of Removed Registers = 18        ;                                                    ;
++-----------------------------------------------+----------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                      ;
-+----------------------------------+---------------------------+-------------------------------------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                            ;
-+----------------------------------+---------------------------+-------------------------------------------------------------------+
-; wb_cpu01:inst|cpu01:cpu0|nmi_req ; Stuck at GND              ; wb_cpu01:inst|cpu01:cpu0|iv[0], wb_cpu01:inst|cpu01:cpu0|nmi_ack, ;
-;                                  ; due to stuck port data_in ; wb_cpu01:inst|cpu01:cpu0|iv[2]                                    ;
-; KeyboardDecoder:inst1|Value[5]   ; Stuck at GND              ; KeyboardDecoder:inst1|Keyb_Value[5]                               ;
-;                                  ; due to stuck port data_in ;                                                                   ;
-+----------------------------------+---------------------------+-------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++----------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++----------------------------------+---------------------------+---------------------------------------------------------------------------------+
+; wb_cpu01:inst|cpu01:cpu0|nmi_req ; Stuck at GND              ; wb_cpu01:inst|cpu01:cpu0|iv[0], wb_cpu01:inst|cpu01:cpu0|nmi_ack,               ;
+;                                  ; due to stuck port data_in ; wb_cpu01:inst|cpu01:cpu0|iv[2]                                                  ;
+; KeyboardDecoder:inst1|Value[5]   ; Stuck at GND              ; KeyboardDecoder:inst1|Keyb_Value[5], KeyboardEmulator:inst2|Keyb_Temp_Value[5], ;
+;                                  ; due to stuck port data_in ; KeyboardEmulator:inst2|Keyb_Clocked_Value[5]                                    ;
++----------------------------------+---------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -477,7 +482,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 189   ;
+; Total registers                              ; 200   ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -493,31 +498,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |Main|KeyboardDecoder:inst1|Value[3]            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|accb[1]          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|accb[4]          ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[1]          ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[11]         ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Main|KeyboardEmulator:inst2|Keyb_Row_O[1]      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|acca[2]          ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[13]           ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[7]            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|xreg[15]         ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Main|KeyboardEmulator:inst2|Keyb_Row_O[2]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|acca[7]          ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[14]           ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |Main|wb_cpu01:inst|cpu01:cpu0|md[1]            ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Main|KeyboardDecoder:inst1|Value[1]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|state            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_and ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_sec ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|KeyboardDecoder:inst1|ShiftLeft0          ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |Main|KeyboardDecoder:inst1|ShiftLeft0          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_ora ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|alu_ctrl.alu_tap ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|state            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Main|DAT_I                                     ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Main|DAT_I                                     ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector9        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector42       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector30       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector37       ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector0        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector43       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector26       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector40       ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector12       ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector144      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector150      ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector56       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector151      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector51       ;
 ; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector17       ;
-; 13:1               ; 6 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector179      ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector168      ;
+; 13:1               ; 6 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector175      ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |Main|wb_cpu01:inst|cpu01:cpu0|Selector172      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
@@ -578,17 +585,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CLK6_MULTIPLY_BY              ; 0                          ; Untyped                ;
 ; CLK5_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK4_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK3_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK2_MULTIPLY_BY              ; 12                         ; Signed Integer         ;
-; CLK1_MULTIPLY_BY              ; 12                         ; Signed Integer         ;
-; CLK0_MULTIPLY_BY              ; 6                          ; Signed Integer         ;
+; CLK3_MULTIPLY_BY              ; 1                          ; Signed Integer         ;
+; CLK2_MULTIPLY_BY              ; 14                         ; Signed Integer         ;
+; CLK1_MULTIPLY_BY              ; 14                         ; Signed Integer         ;
+; CLK0_MULTIPLY_BY              ; 7                          ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK8_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK7_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK6_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK5_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK4_DIVIDE_BY                ; 1                          ; Untyped                ;
-; CLK3_DIVIDE_BY                ; 1                          ; Untyped                ;
+; CLK3_DIVIDE_BY                ; 5                          ; Signed Integer         ;
 ; CLK2_DIVIDE_BY                ; 5                          ; Signed Integer         ;
 ; CLK1_DIVIDE_BY                ; 5                          ; Signed Integer         ;
 ; CLK0_DIVIDE_BY                ; 5                          ; Signed Integer         ;
@@ -599,7 +606,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CLK5_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK4_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK3_PHASE_SHIFT              ; 0                          ; Untyped                ;
-; CLK2_PHASE_SHIFT              ; 4167                       ; Untyped                ;
+; CLK2_PHASE_SHIFT              ; 3571                       ; Untyped                ;
 ; CLK1_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK0_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK5_TIME_DELAY               ; 0                          ; Untyped                ;
@@ -614,7 +621,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; CLK6_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK5_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK4_DUTY_CYCLE               ; 50                         ; Untyped                ;
-; CLK3_DUTY_CYCLE               ; 50                         ; Untyped                ;
+; CLK3_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK2_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK1_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK0_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
@@ -848,7 +855,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; PORT_CLK0                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK1                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK2                     ; PORT_USED                  ; Untyped                ;
-; PORT_CLK3                     ; PORT_UNUSED                ; Untyped                ;
+; PORT_CLK3                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK4                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK5                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK6                     ; PORT_UNUSED                ; Untyped                ;
@@ -1098,26 +1105,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 69                          ;
-; cycloneiii_ff         ; 189                         ;
+; boundary_port         ; 68                          ;
+; cycloneiii_ff         ; 200                         ;
 ;     ENA               ; 63                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 116                         ;
-; cycloneiii_lcell_comb ; 1220                        ;
+;     plain             ; 127                         ;
+; cycloneiii_lcell_comb ; 1226                        ;
 ;     arith             ; 91                          ;
 ;         2 data inputs ; 17                          ;
 ;         3 data inputs ; 74                          ;
-;     normal            ; 1129                        ;
+;     normal            ; 1135                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 101                         ;
-;         3 data inputs ; 230                         ;
-;         4 data inputs ; 790                         ;
+;         2 data inputs ; 87                          ;
+;         3 data inputs ; 243                         ;
+;         4 data inputs ; 797                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 18.10                       ;
-; Average LUT depth     ; 10.56                       ;
+; Max LUT depth         ; 16.20                       ;
+; Average LUT depth     ; 10.11                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1126,7 +1133,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1135,11 +1142,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Sun Dec 06 15:21:55 2020
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Mon May 15 22:48:36 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU_6801 -c CPU_6801
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file system6801/ioport/ioport.vhd
     Info (12022): Found design unit 1: ioport-ioport_arch File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/ioport.vhd Line: 46
     Info (12023): Found entity 1: ioport File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/System6801/ioport/ioport.vhd Line: 30
@@ -1186,30 +1193,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file keyboar
 Info (12127): Elaborating entity "Main" for the top level hierarchy
 Info (12128): Elaborating entity "KeyboardDecoder" for hierarchy "KeyboardDecoder:inst1"
 Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(19): truncated value with size 32 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 19
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(32): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 32
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(36): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 36
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(40): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 40
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(44): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 44
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(51): truncated value with size 32 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 51
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(52): truncated value with size 32 to match size of target (3) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 52
-Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(53): truncated value with size 32 to match size of target (2) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 53
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(33): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 33
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(37): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 37
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(41): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 41
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(45): truncated value with size 32 to match size of target (6) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 45
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(52): truncated value with size 32 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 52
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(53): truncated value with size 32 to match size of target (4) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 53
+Warning (10230): Verilog HDL assignment warning at KeyboardDecoder.v(54): truncated value with size 32 to match size of target (3) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/KeyboardDecoder.v Line: 54
 Info (12128): Elaborating entity "CPUClock" for hierarchy "CPUClock:inst3"
-Info (12128): Elaborating entity "altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 111
-Info (12130): Elaborated megafunction instantiation "CPUClock:inst3|altpll:altpll_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 111
-Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component" with the following parameter: File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 111
+Info (12128): Elaborating entity "altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 115
+Info (12130): Elaborated megafunction instantiation "CPUClock:inst3|altpll:altpll_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 115
+Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component" with the following parameter: File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPUClock.v Line: 115
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
-    Info (12134): Parameter "clk0_multiply_by" = "6"
+    Info (12134): Parameter "clk0_multiply_by" = "7"
     Info (12134): Parameter "clk0_phase_shift" = "0"
     Info (12134): Parameter "clk1_divide_by" = "5"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
-    Info (12134): Parameter "clk1_multiply_by" = "12"
+    Info (12134): Parameter "clk1_multiply_by" = "14"
     Info (12134): Parameter "clk1_phase_shift" = "0"
     Info (12134): Parameter "clk2_divide_by" = "5"
     Info (12134): Parameter "clk2_duty_cycle" = "50"
-    Info (12134): Parameter "clk2_multiply_by" = "12"
-    Info (12134): Parameter "clk2_phase_shift" = "4167"
+    Info (12134): Parameter "clk2_multiply_by" = "14"
+    Info (12134): Parameter "clk2_phase_shift" = "3571"
+    Info (12134): Parameter "clk3_divide_by" = "5"
+    Info (12134): Parameter "clk3_duty_cycle" = "50"
+    Info (12134): Parameter "clk3_multiply_by" = "1"
+    Info (12134): Parameter "clk3_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
@@ -1245,7 +1256,7 @@ Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
     Info (12134): Parameter "port_clk1" = "PORT_USED"
     Info (12134): Parameter "port_clk2" = "PORT_USED"
-    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_USED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
     Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
@@ -1261,8 +1272,8 @@ Info (12133): Instantiated megafunction "CPUClock:inst3|altpll:altpll_component"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/cpuclock_altpll.v
-    Info (12023): Found entity 1: CPUClock_altpll File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v Line: 30
-Info (12128): Elaborating entity "CPUClock_altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated" File: f:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
+    Info (12023): Found entity 1: CPUClock_altpll File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/cpuclock_altpll.v Line: 31
+Info (12128): Elaborating entity "CPUClock_altpll" for hierarchy "CPUClock:inst3|altpll:altpll_component|CPUClock_altpll:auto_generated" File: e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "AddressableLatch" for hierarchy "AddressableLatch:inst23"
 Warning (10240): Verilog HDL Always Construct warning at AddressableLatch.v(10): inferring latch(es) for variable "Q", which holds its previous value in one or more paths through the always construct File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
 Info (10041): Inferred latch for "Q[0]" at AddressableLatch.v(10) File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/AddressableLatch.v Line: 10
@@ -1301,8 +1312,8 @@ Info (12133): Instantiated megafunction "ET3400_ROM:inst11|altsyncram:altsyncram
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m071.tdf
-    Info (12023): Found entity 1: altsyncram_m071 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_m071.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_m071" for hierarchy "ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated" File: f:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+    Info (12023): Found entity 1: altsyncram_m071 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_m071.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_m071" for hierarchy "ET3400_ROM:inst11|altsyncram:altsyncram_component|altsyncram_m071:auto_generated" File: e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "ET3400_RAM" for hierarchy "ET3400_RAM:inst16"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 87
 Info (12130): Elaborated megafunction instantiation "ET3400_RAM:inst16|altsyncram:altsyncram_component" File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/ET3400_RAM.v Line: 87
@@ -1321,8 +1332,8 @@ Info (12133): Instantiated megafunction "ET3400_RAM:inst16|altsyncram:altsyncram
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r4d1.tdf
-    Info (12023): Found entity 1: altsyncram_r4d1 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_r4d1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_r4d1" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated" File: f:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+    Info (12023): Found entity 1: altsyncram_r4d1 File: F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/db/altsyncram_r4d1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_r4d1" for hierarchy "ET3400_RAM:inst16|altsyncram:altsyncram_component|altsyncram_r4d1:auto_generated" File: e:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "KeyboardEmulator" for hierarchy "KeyboardEmulator:inst2"
 Info (12128): Elaborating entity "16ndmux" for hierarchy "16ndmux:inst30"
 Info (12130): Elaborated megafunction instantiation "16ndmux:inst30"
@@ -1435,20 +1446,25 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[5]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPU_6801.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]"
-Info (21057): Implemented 1308 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
+Info (21057): Implemented 1322 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
     Info (21059): Implemented 62 output pins
-    Info (21061): Implemented 1222 logic cells
+    Info (21061): Implemented 1237 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 125 warnings
-    Info: Peak virtual memory: 4871 megabytes
-    Info: Processing ended: Sun Dec 06 15:22:12 2020
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 123 warnings
+    Info: Peak virtual memory: 4932 megabytes
+    Info: Processing ended: Mon May 15 22:48:48 2023
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/DE10-Lite/Tools/SystemBuilder/CodeGenerated/DE10_LITE/CPU_6801/CPU_6801.map.smsg.
 
 

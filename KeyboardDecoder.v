@@ -12,50 +12,46 @@ module KeyboardDecoder(Clock, Keyb_Row_I, Keyb_Col_O, Keyb_Value);
 	
 	reg [5:0] Value;
 	reg [2:0] CurrentCol;
-	reg [3:0] CurrentColVal;
-	
-	reg [1:0] cycle;
+	reg [3:0] CurrentColVal;	
+	reg [3:0] CycleCount;
 	
 	
 	assign Keyb_Col_O = 1 << CurrentCol;
 
 	
 	always @ (posedge Clock)
-		begin
-			cycle = cycle + 1;		
-			if (cycle == 2'b11)
-				begin			
-				
-					if (CurrentCol == 5)
-						begin
-							Value <= 0;
-							CurrentCol <= 0;
-							CurrentColVal <= 0;
-							Keyb_Value <= Value;
-						end
-					else
-						begin
-							CurrentCol <= CurrentCol + 1;
-							CurrentColVal <= (CurrentCol + 1) << 2;
-						end
-						
-					if (Keyb_Row_I[0] && CurrentCol < 5)
-						begin
-							Value <= CurrentColVal + 1;
-						end				
-					else if (Keyb_Row_I[1] && CurrentCol < 5)
-						begin
-							Value <= CurrentColVal + 2;
-						end				
-					else if (Keyb_Row_I[2] && CurrentCol < 5)
-						begin
-							Value <= CurrentColVal + 3;
-						end				
-					else if (Keyb_Row_I[3] && CurrentCol < 5)
-						begin
-							Value <= CurrentColVal + 4;
-						end
+		begin				
+			// This will hold the value on the output for 8 Clock cycles
+			if (CycleCount == 4)
+				begin
+					Keyb_Value <= Value;
+					CycleCount = 0;
+				end			
+		
+			if (Keyb_Row_I[0])
+				begin
+					Value = CurrentColVal + 1;
+				end				
+			else if (Keyb_Row_I[1])
+				begin
+					Value = CurrentColVal + 2;
+				end				
+			else if (Keyb_Row_I[2])
+				begin
+					Value = CurrentColVal + 3;
+				end				
+			else if (Keyb_Row_I[3])
+				begin
+					Value = CurrentColVal + 4;
 				end
+			else if (CurrentCol == 0)
+				begin
+					Value = 0;
+				end
+							
+			CurrentColVal = (CurrentCol + 1) * 4;
+			CycleCount = CycleCount + 1;
+			CurrentCol = CurrentCol + 1;
 		end
 			
 			

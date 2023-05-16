@@ -468,4 +468,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIOGPIO_I
 set_global_assignment -name VERILOG_FILE KeyboardEmulator.v
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
+set_global_assignment -name TOP_LEVEL_ENTITY Main
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

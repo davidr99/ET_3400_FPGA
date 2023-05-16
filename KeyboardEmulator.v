@@ -8,6 +8,9 @@ module KeyboardEmulator(Clock, Keyb_Value, Keyb_Col_I, Keyb_Row_O);
 	output reg [6:0] Keyb_Row_O;
 	input [2:0] Keyb_Col_I;
 	
+	reg [5:0] Keyb_Temp_Value;
+	reg [5:0] Keyb_Clocked_Value;
+	
 	// E = #
 	// F = *
 	
@@ -28,10 +31,13 @@ module KeyboardEmulator(Clock, Keyb_Value, Keyb_Col_I, Keyb_Row_O);
 		
 	always @ (posedge Clock)
 		begin
+			Keyb_Temp_Value <= Keyb_Value;
+			Keyb_Clocked_Value <= Keyb_Temp_Value;
+			
 			// A0 Col
 			if (Keyb_Col_I  == 3'b110)
 				begin
-					case (Keyb_Value)
+					case (Keyb_Clocked_Value)
 						16: Keyb_Row_O = ~(6'b1);
 						13: Keyb_Row_O = ~(6'b10);
 						 3: Keyb_Row_O = ~(6'b100);
@@ -44,7 +50,7 @@ module KeyboardEmulator(Clock, Keyb_Value, Keyb_Col_I, Keyb_Row_O);
 				// A1 Col
 			else if (Keyb_Col_I == 3'b101)
 				begin
-					case (Keyb_Value)
+					case (Keyb_Clocked_Value)
 						12: Keyb_Row_O = ~(6'b1);
 						14: Keyb_Row_O = ~(6'b10);
 						 7: Keyb_Row_O = ~(6'b100);
@@ -56,7 +62,7 @@ module KeyboardEmulator(Clock, Keyb_Value, Keyb_Col_I, Keyb_Row_O);
 				// A2 Col
 			else if (Keyb_Col_I  == 3'b011)
 				begin
-					case (Keyb_Value)
+					case (Keyb_Clocked_Value)
 						 4: Keyb_Row_O = ~(6'b1);
 						15: Keyb_Row_O = ~(6'b10);
 						11: Keyb_Row_O = ~(6'b100);
